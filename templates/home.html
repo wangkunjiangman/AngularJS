@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <ul class="menu">
+                <li class="active"><a href="index.html">坤坤困困阿</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row"  >
+        <div class="col-md-4 col-md-offset-4" ng-controller="loginController">
+            <!-- Start Sign In Form -->
+            <form name="loginForm" class="fh5co-form" ng-submit="submitForm()">
+                <h2>登录</h2>
+                <div class="form-group">
+                    <label for="userName" class="sr-only">用户名:</label>
+                    <input type="text" ng-model="userdata.userName" class="form-control" id="userName"  name ="userName"  required placeholder="Username"  ng-minlength="6" ng-maxlength="14">
+                    <p class="error" ng-if="(loginForm.userName.$error.minlength || loginForm.userName.$error.maxlength ) && loginForm.userName.$touched">
+                        用户名应该在6至16位
+                    </p>
+                    <p class="error" ng-if="loginForm.userName.$error.required  && loginForm.userName.$touched">
+                        请输入用户名
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="passWord" class="sr-only">密码:</label>
+                    <input type="password" class="form-control" id="passWord" name ="passWord" required placeholder="Password"ng-model="userdata.passWord" ng-minlength="6" ng-maxlength="16">
+                    <p class="error" ng-if="(loginForm.passWord.$error.minlength || loginForm.passWord.$error.maxlength ) && loginForm.passWord.$touched">
+                        密码应该在6至16位
+                    </p>
+                    <p class="error" ng-if="loginForm.passWord.$error.required  && loginForm.passWord.$touched">
+                        请输入密码
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
+                </div>
+                <div class="form-group">
+                    <p>米有帐号? <a href="sign-up.html">注册</a> | <a href="forgot.html">忘记密码?</a></p>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" ng-disabled="loginForm.$invalid">登录</button>
+                    <p style="margin-top:10px;font-size: 15px;color:#aa1100;">{{formMsg}}</p>
+                </div>
+            </form>
+            <!-- END Sign In Form -->
+
+        </div>
+    </div>
+    <div class="row" style="padding-top: 60px; clear: both;">
+        <div class="col-md-12 text-center"><p><small>&copy; All Rights Reserved. More Templates <a href="http://www.baidu.com/" target="_blank" title="百度搜一搜">百度</a> - Collect from <a href="http://www.google.com/" title="谷歌搜一搜" target="_blank">谷歌</a></small></p></div>
+    </div>
+</div>
+
